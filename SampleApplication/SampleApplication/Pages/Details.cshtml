@@ -1,0 +1,67 @@
+﻿@page
+@model SampleApplication.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.JoiningDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.JoiningDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.IsActive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.IsActive)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.DepartmentId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.DepartmentId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Grade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Grade)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Create" asp-route-id="@Model.Employee.EmployeeId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
