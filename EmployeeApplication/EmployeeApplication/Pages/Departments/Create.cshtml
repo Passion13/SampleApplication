@@ -1,0 +1,55 @@
+﻿@page
+@model EmployeeApplication.Pages.Departments.CreateModel
+
+@{
+    ViewData["Title"] = "Create New Department";
+}
+
+<h2>Create</h2>
+
+<h4>Create Department</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="DepartmentVM.DepartmentId" type="hidden" class="form-control" />
+            <div class="form-group">
+                <label asp-for="DepartmentVM.Name" class="control-label"></label>
+                <input asp-for="DepartmentVM.Name" class="form-control" />
+                <span asp-validation-for="DepartmentVM.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@(Model.DepartmentVM.DepartmentId>0?"Update":"Create")" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartmentVM.DepartmentList[0].Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DepartmentVM.DepartmentList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a asp-page="./Create" asp-route-id="@item.DepartmentId">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.DepartmentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

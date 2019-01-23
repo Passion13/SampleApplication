@@ -1,0 +1,28 @@
+﻿@page
+@model EmployeeApplication.Pages.Departments.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Department";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Department.Name)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Department.DepartmentId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Create">Back to List</a>
+    </form>
+</div>
